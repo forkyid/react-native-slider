@@ -305,7 +305,7 @@ export class Slider extends PureComponent {
             height: 40,
         };
         if (allMeasured) {
-            size.width = Math.max(0, thumbTouchSize?.width || 0 - thumbSize.width);
+            size.width = Math.max(0, thumbTouchSize?.width || thumbSize.width);
             size.height = Math.max(0, thumbTouchSize?.height || 0 - containerSize.height);
         }
         return size;
