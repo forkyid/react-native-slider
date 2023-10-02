@@ -409,12 +409,12 @@ export class Slider extends PureComponent {
         const interpolatedThumbValues = values.map((value) => value.interpolate({
             inputRange: [minimumValue, maximumValue],
             outputRange: I18nManager.isRTL
-                ? [0, -(containerSize.width - rightPadding)]
-                : [0, containerSize.width - rightPadding],
+                ? [0, -(containerSize.width - rightPadding - thumbSize.width / 2)]
+                : [0, containerSize.width - rightPadding - thumbSize.width / 2],
         }));
         const interpolatedTrackValues = values.map((value) => value.interpolate({
             inputRange: [minimumValue, maximumValue],
-            outputRange: [0, containerSize.width - rightPadding],
+            outputRange: [0, containerSize.width - rightPadding - thumbSize.width / 2],
         }));
         const interpolatedTrackMarksValues = trackMarksValues &&
             trackMarksValues.map((v) => v.interpolate({
